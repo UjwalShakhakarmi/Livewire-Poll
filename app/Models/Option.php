@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Option extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
 
     // belongs to poll
     public function poll(): BelongsTo
@@ -19,6 +20,6 @@ class Option extends Model
 
     public function votes(): HasMany
     {
-        return $this->hasMany(Votes::class);
+        return $this->hasMany(Vote::class);
     }
 }
